@@ -11,7 +11,13 @@ La page d’accueil permet de rechercher un trajet en fonction "
 "Le résultat de la recherche sera affiché sur la partie droite de la page d'accueil avec la possibilité d’ajouter les trajets au panier." 
                       #resultContainer
 */
-    
+
+//Rechargement à chaque ouverture de la page de l'image et texte par défaut:
+
+document.querySelector('#imageResult').src="./images/train.png";
+document.querySelector('#phraseResult').textContent="It's time to book your futur trip.";
+
+
 
 // Add eventListener for search button
 document.querySelector('#search').addEventListener('click', function () {
@@ -40,13 +46,16 @@ fetch('http://localhost:3000/trips', {
                 document.querySelector('#resultContainer').innerHTML +=  `<div class="tripLine"> 
                 <span> ${data.trips[i].departure} >  ${data.trips[i].arrival}</span>
                 <span> ${data.trips[i].date} </span>
-                <span> ${data.trips[i].price}</span> 
+                <span> ${data.trips[i].price}</span>
+                <span class="tripId">${data.trips[i]._id}</span> 
                 <span class="book">Book</span>
                 </div>`;
             }
         }
         else { // something went wrong  most probably missing or empty fields
             console.warn(data);
+            document.querySelector('#imageResult').src="./images/notfound.png";
+            document.querySelector('#phraseResult').textContent="No trip found.";
         }
     });
 });
