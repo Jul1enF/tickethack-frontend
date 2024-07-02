@@ -9,12 +9,12 @@
     <div id="container">
         <div id="headerContainer">
             <div id="siteName">
-                <h2 id="tickethack">Tickethack</h2>
+                <a class="link" href="./index.html"><h2 id="tickethack">Tickethack</h2></a>
 
             </div>
             <div id="links">
-                <span id="cart" class="link">Cart</span>
-                <span id="bookings" class="link">Bookings</span>
+                <a class="link"><span id="cart" class="linkSentence">Cart</span></a>
+                <a class="link"><span id="bookings" class="linkSentence">Bookings</span></a>
             </div>
         </div>
 
@@ -25,15 +25,16 @@
 
         <div id="tripsContainer">
             <div id="searchContainer" class="centralsContainer">
-                <div id="inputContainer">
-                    <input id="departureInput" class="searchInput" type="text">
-                    <input id="arrivalInput" class="searchInput" type="text">
+                
+                    <input id="departureInput" class="searchInput" type="text" placeholder="Departure">
+                    <input id="arrivalInput" class="searchInput" type="text" placeholder="Arrival">
                     <input type="date" id="dateInput" class="searchInput">
-                    <button id="search"></button>
-                </div>
+                    <button id="search">Search</button>
+                
             </div>
             <div id="resultContainer" class="centralsContainer">
-
+                <img id="imageResult"  src="./images/train.png" />
+                <span id="phraseResult">It's time to book your futur trip.</span>
             </div>
         </div>
 
