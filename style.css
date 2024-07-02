@@ -61,7 +61,6 @@
     grid-row-end: 10;
     grid-column-start: 3;
     grid-column-end: 11;
-    
     display: flex;
     justify-content: space-between;
     height: 100%;
@@ -77,3 +76,4 @@
     border-radius: 5%;
 }
 
+#inputContainer
