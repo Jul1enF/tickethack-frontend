@@ -109,6 +109,8 @@
     background-color: rgb(242,243,243)	;
     border-radius: 5%;
     border:transparent;
+    padding-right: 2.5%;
+    padding-left: 2.5%;
 }
 
 #departureInput{
@@ -143,6 +145,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    padding: 3%;
+    overflow-y: scroll;
+    scrollbar-width:none;
 }
 
 #imageResult{
@@ -152,4 +157,26 @@
 #phraseResult{
     border-top: 2px solid rgb(100,165,145);
     padding: 9%;
+}
+
+.tripLine{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(246	241	240	);
+    padding : 2% 2.5%;
+    margin-bottom: 5%;
+    border-radius: 3%;
+}
+
+.tripId{
+    display:none;
+}
+
+.book{
+    background-color: rgb(100,165,145);
+    padding: 1% 2%;
+    border-radius: 8%;
+    color: white;
 }

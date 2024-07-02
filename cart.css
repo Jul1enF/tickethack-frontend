@@ -98,6 +98,10 @@ body{
 
 }
 
+.tripId{
+    display : none;
+}
+
 #totalContainer{
     width: 70%;
     background-color: rgb(3,23,68)	;
