@@ -12,12 +12,13 @@ La page d’accueil permet de rechercher un trajet en fonction "
                       #resultContainer
 */
 
-//Rechargement à chaque ouverture de la page de l'image et texte par défaut:
 
+
+//Rechargement à chaque ouverture de la page de l'image et texte par défaut:
 document.querySelector('#imageResult').src="./images/train.png";
 document.querySelector('#phraseResult').textContent="It's time to book your futur trip.";
 
-
+const moment = require('moment')
 
 // Add eventListener for search button
 document.querySelector('#search').addEventListener('click', function () {
@@ -29,7 +30,7 @@ document.querySelector('#search').addEventListener('click', function () {
 	const departure = document.querySelector('#departureInput').value;
     const arrival = document.querySelector('#arrivalInput').value;
     const date = document.querySelector('#dateInput').value;
-    
+    console.log(date)
 // Search trips : method POST / pas de données sensibles nous aurions pu utiliser  GET+params
 fetch('http://localhost:3000/trips', {
     method: 'POST',
@@ -37,15 +38,19 @@ fetch('http://localhost:3000/trips', {
     body: JSON.stringify({ departure, arrival, date }),
 }).then(response => response.json())
     .then(data => {
+        
         if (data.result) {  // if successful search 
             // clear parent div resultContainer
             document.querySelector('#resultContainer').innerHTML="";
             // display result of search : "TripLines"
             for (let i = 0; i < data.trips.length; i++) {
                 console.log("FE:<<<BE",data);
+
+                let tripTime = data.trips[i].date
+
                 document.querySelector('#resultContainer').innerHTML +=  `<div class="tripLine"> 
                 <span> ${data.trips[i].departure} >  ${data.trips[i].arrival}</span>
-                <span> ${data.trips[i].date} </span>
+                <span> ${tripTime} </span>
                 <span> ${data.trips[i].price}</span>
                 <span class="tripId">${data.trips[i]._id}</span> 
                 <span class="book">Book</span>
