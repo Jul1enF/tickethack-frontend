@@ -1,0 +1,79 @@
+#container {
+    display: grid;
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    height : 100vh;
+    background-image: url('./images/background.jpg');
+    background-position: center center;
+    background-size: cover;
+}
+
+#headerContainer{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 13;
+    background-color: white;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+#siteName{
+    margin-left: 2vw;
+}
+
+#tickethack{
+    color:rgb(101,167,146)	
+}
+
+#links{
+    margin-right: 2VW;
+}
+
+
+
+#titlesContainer{
+    grid-row-start: 2;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 13;
+    
+    display: flex;
+    flex-direction: column ;
+    justify-content: space-evenly;
+    align-items:center;
+
+}
+
+#mainPhrase{
+    color:white;
+}
+
+#explanation{
+    color:white;
+    font-size: 2vh;
+}
+
+
+#tripsContainer{
+    grid-row-start: 5;
+    grid-row-end: 10;
+    grid-column-start: 3;
+    grid-column-end: 11;
+    
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width:100%;
+}
+
+.centralsContainer{
+    height: 100%;
+    width: 40%;
+    background-color: white;
+    margin-right: 2%;
+    margin-left: 2%;
+    border-radius: 5%;
+}
+
