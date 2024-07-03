@@ -53,7 +53,7 @@ fetch('http://localhost:3000/trips', {
                 <span> ${tripTime} </span>
                 <span> ${data.trips[i].price}€</span>
                 <span class="tripId">${data.trips[i]._id}</span> 
-                <span class="book">Book</span>
+                <button class="book">Book</button>
                 </div>`;
             }
 

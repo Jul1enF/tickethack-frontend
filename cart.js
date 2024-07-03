@@ -12,7 +12,7 @@ function displayAllTrip(data){
                     <span> ${data.trips[i].time}</span>
                     <span> ${data.trips[i].trip.price}€</span>
                     <span class="tripId">${data.trips[i].trip._id}</span> 
-                    <span class="deleteButton">x</span>
+                    <button class="deleteButton">x</button>
                     </div>`
     
                     add+=data.trips[i].trip.price
