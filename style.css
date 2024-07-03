@@ -9,9 +9,17 @@
     grid-template-rows: repeat(12, 1fr);
     grid-template-columns: repeat(12, 1fr);
     height : 100vh;
+    
+}
+
+#backgroundContainer {
+    grid-row-start: 2;
+    grid-row-end: 13;
+    grid-column-start: 1;
+    grid-column-end: 13;
     background-image: url('./images/background.jpg');
-    background-position: center center;
-    background-size: cover;
+    background-position: top;
+    background-size:cover;
 }
 
 #headerContainer{
@@ -30,6 +38,7 @@
 
 #siteName{
     margin-left: 2vw;
+    font-family: 'Mada';
 }
 
 #tickethack{
@@ -38,6 +47,13 @@
 
 .link{
     text-decoration: none;
+    font-family: 'Dosis';
+    font-weight:500;
+    color :black;
+}
+
+.link:hover{
+    cursor: pointer;
 }
 
 #links{
@@ -67,11 +83,15 @@
 #mainPhrase{
     color:white;
     font-size: 200%;
+    font-family: 'PT Sans';
+    font-weight: 300;
 }
 
 #explanation{
     color:white;
     font-size:130%;
+    font-family: 'PT Sans';
+    font-weight:10;
 }
 
 
@@ -93,6 +113,7 @@
     margin-right: 4%;
     margin-left: 4%;
     border-radius: 5%;
+    font-family: 'PT Sans';
 }
 
 #searchContainer{
@@ -140,6 +161,10 @@
     color: white;
 }
 
+#search:hover{
+    cursor: pointer;
+}
+
 #resultContainer{
     display: flex;
     flex-direction: column;
@@ -180,4 +205,8 @@
     border-radius: 8%;
     color: white;
     border: transparent;
+}
+
+.book:hover{
+    cursor: pointer;
 }

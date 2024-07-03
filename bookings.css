@@ -30,6 +30,7 @@ body{
 
 #siteName{
     margin-left: 2vw;
+    font-family: 'Mada';
 }
 
 #tickethack{
@@ -38,6 +39,13 @@ body{
 
 .link{
     text-decoration: none;
+    font-family: 'Dosis';
+    font-weight:500;
+    color :black;
+}
+
+.link:hover{
+    cursor: pointer;
 }
 
 #links{
@@ -63,6 +71,8 @@ body{
     align-items: center;
     height: 100%;
     width:100%;
+    font-family: 'PT Sans';
+    font-weight: 200;
 }
 
 #bookingContainer{
@@ -97,6 +107,8 @@ body{
     justify-content: center;
     align-items: center;
     padding-top: 1.5% ;
+    font-family: 'PT Sans';
+    font-weight: 200;
 }
 
 #enjoySentence{
