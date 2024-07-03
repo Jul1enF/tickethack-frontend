@@ -4,7 +4,7 @@ function displayAllTrip(data){
         document.querySelector('#cartContainer').innerHTML=''
         document.querySelector('#totalContainer').style.display="flex"
     
-        let add = 0
+        let total = 0
     
         for (let i=0; i<data.trips.length ; i++){
             document.querySelector('#cartContainer').innerHTML+=`<div           class="tripLine"> 
@@ -15,9 +15,9 @@ function displayAllTrip(data){
                     <button class="deleteButton">x</button>
                     </div>`
     
-                    add+=data.trips[i].trip.price
+                    total+=data.trips[i].trip.price
         }
-        document.querySelector('#resultSentence').innerHTML=`Total : ${add}€`
+        document.querySelector('#resultSentence').innerHTML=`Total : ${total}€`
     }
         
 }
@@ -27,5 +27,6 @@ fetch('http://localhost:3000/cart')
 .then(response=>response.json())
 .then(data => {
     displayAllTrip(data)
+    
     
 })
