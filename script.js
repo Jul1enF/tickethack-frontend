@@ -18,7 +18,7 @@ La page d’accueil permet de rechercher un trajet en fonction "
 document.querySelector('#imageResult').src="./images/train.png";
 document.querySelector('#phraseResult').textContent="It's time to book your futur trip.";
 
-const moment = require('moment')
+
 
 // Add eventListener for search button
 document.querySelector('#search').addEventListener('click', function () {
@@ -46,16 +46,39 @@ fetch('http://localhost:3000/trips', {
             for (let i = 0; i < data.trips.length; i++) {
                 console.log("FE:<<<BE",data);
 
-                let tripTime = data.trips[i].date
+                let tripTime = new Date(data.trips[i].date).toLocaleTimeString().slice(0,5)
 
                 document.querySelector('#resultContainer').innerHTML +=  `<div class="tripLine"> 
                 <span> ${data.trips[i].departure} >  ${data.trips[i].arrival}</span>
                 <span> ${tripTime} </span>
-                <span> ${data.trips[i].price}</span>
+                <span> ${data.trips[i].price}€</span>
                 <span class="tripId">${data.trips[i]._id}</span> 
                 <span class="book">Book</span>
                 </div>`;
             }
+
+            const bookButtons = document.querySelectorAll('.book')
+            for (let button of bookButtons){
+                button.addEventListener('click', function (){
+                    let name = this.parentNode.firstElementChild.textContent
+                    let trip = this.previousElementSibling.textContent
+                    let time=this.parentNode.firstElementChild.nextElementSibling.textContent
+
+                    fetch('http://localhost:3000/cart',{
+                        method: 'POST',
+                        headers: {'Content-Type':'application/json'},
+                        body: JSON.stringify({name, time, trip})
+                    })
+                    .then(response=>response.json())
+                    .then(data=> {if (data.result){
+                        window.location.assign('./cart.html')}
+                    })
+
+
+                })
+            }
+
+
         }
         else { // something went wrong  most probably missing or empty fields
             console.warn(data);
