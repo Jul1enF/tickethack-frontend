@@ -32,7 +32,7 @@ document.querySelector('#search').addEventListener('click', function () {
     const date = document.querySelector('#dateInput').value;
     console.log(date)
 // Search trips : method POST / pas de données sensibles nous aurions pu utiliser  GET+params
-fetch('http://localhost:3000/trips', {
+fetch('https://tickethack-backend-mocha.vercel.app/trips', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ departure, arrival, date }),
@@ -64,7 +64,7 @@ fetch('http://localhost:3000/trips', {
                     let trip = this.previousElementSibling.textContent
                     let time=this.parentNode.firstElementChild.nextElementSibling.textContent
 
-                    fetch('http://localhost:3000/cart',{
+                    fetch('https://tickethack-backend-mocha.vercel.app/cart',{
                         method: 'POST',
                         headers: {'Content-Type':'application/json'},
                         body: JSON.stringify({name, time, trip})

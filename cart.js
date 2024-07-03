@@ -1,5 +1,5 @@
 function displayAllTrip() {
-    fetch('http://localhost:3000/cart')
+    fetch('https://tickethack-backend-mocha.vercel.app/cart')
         .then(response => response.json())
         .then(data => {
 
@@ -32,7 +32,7 @@ function displayAllTrip() {
                 tripsInCart[i].addEventListener('click', function () {
                      let tripid=this.previousElementSibling.textContent;
                      console.log(tripid);
-                    fetch(`http://localhost:3000/cart/${tripid}`, { method: 'DELETE'} )
+                    fetch(`https://tickethack-backend-mocha.vercel.app/cart/${tripid}`, { method: 'DELETE'} )
                     .then(response => response.json())
                     .then(data => {
                         if (data.deletedCount) {
@@ -53,7 +53,7 @@ function displayAllTrip() {
             let trips = document.querySelectorAll(".tripId")
         
             for (let i=0 ; i<names.length ; i++) {
-            fetch('http://localhost:3000/bookings',{
+            fetch('https://tickethack-backend-mocha.vercel.app/bookings',{
                                 method: 'POST',
                                 headers: {'Content-Type':'application/json'},
                                 body: JSON.stringify({name : names[i].textContent, time : times[i].textContent, trip : trips[i].textContent})
@@ -65,7 +65,7 @@ function displayAllTrip() {
                 }
             })
             let idTrip = trips[i].textContent
-            fetch(`http://localhost:3000/cart/${idTrip}`, { method: 'DELETE'})
+            fetch(`https://tickethack-backend-mocha.vercel.app/cart/${idTrip}`, { method: 'DELETE'})
             .then(response=>response.json())
             .then(data=> {
                 if (data.result){

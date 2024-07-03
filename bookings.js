@@ -23,7 +23,7 @@ function displayAllTrip(data){
 }
 
 
-fetch('http://localhost:3000/bookings')
+fetch('https://tickethack-backend-mocha.vercel.app/bookings')
 .then(response=>response.json())
 .then(data => {
     displayAllTrip(data)
