@@ -23,7 +23,7 @@ function displayAllTrip(data){
 }
 
 
-fetch('http://localhost:3000/cart')
+fetch('http://localhost:3000/bookings')
 .then(response=>response.json())
 .then(data => {
     displayAllTrip(data)
